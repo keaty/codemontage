@@ -1,9 +1,18 @@
 $(document).ready(function () {
 
-  $("#language_filter").change( function(event) {
-    event.preventDefault();
+  $("input:radio").click(function() {
 
-    console.log('checkbox checked')
+    var selected = $(this).val();
+
+    $( "div.projects" ).children( ".row" ).each( function() {
+
+      if($(this).data('id') === selected) {
+        $( this ).removeClass('hidden');
+      } else {
+        $( this ).addClass('hidden');
+      };
+
+    });
 
   });
 
