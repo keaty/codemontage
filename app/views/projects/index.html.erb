@@ -8,14 +8,15 @@
           Excited to contribute, but can't dig in right now? <%= link_to "Code Later", code_later_url %>!</p>
 
       <form id="language_filter">
-        <input type="checkbox" name="language" value="Ruby">Ruby
-        <input type="checkbox" name="language" value="Ruby">JavaScript
-        <input type="checkbox" name="language" value="Ruby">PostgreSQL
-        <input type="checkbox" name="language" value="Python">Python
+        <input type="radio" name="language" value="All" checked>All
+        <input type="radio" name="language" value="Ruby">Ruby
+        <input type="radio" name="language" value="JavaScript">JavaScript
+        <input type="radio" name="language" value="PostgreSQL">PostgreSQL
+        <input type="radio" name="language" value="Python">Python
       </form>
 
         <% @featured_projects.each do |project| %>
-          <div class="row">
+          <div class="row" data-id="<%= project.id %>">
             <div class="project_summary large-6 columns">
               <h5><%= link_to project.name, project_path(project) %>
                 <span class="favorite">
@@ -68,5 +69,5 @@
 </div>
 
 <script type="text/javascript">
-  var projects_json = <%= @featured_projects.to_json.html_safe %>;
+  var projects_json = <%= @featured_projects.to_json(:include => :technologies).html_safe %>;
 </script>
