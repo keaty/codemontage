@@ -22,9 +22,9 @@
   Project.create(:organization_id => 2, :name => "Dev Bootcamp Platform", :github_repo => "codemontage", :cause_list => "Volunteerism, Economic Empowerment, Tech Inclusion", :technology_list => "Ruby, Rails, PostgreSQL, JavaScript")
   Project.create(:organization_id => 2, :name => "Dev Bootcamp Platform", :github_repo => "codemontage", :cause_list => "Volunteerism, Economic Empowerment, Tech Inclusion", :technology_list => "Ruby, Rails, PostgreSQL, JavaScript")
   Project.create(:organization_id => 2, :name => "Dev Bootcamp Platform", :github_repo => "codemontage", :cause_list => "Volunteerism, Economic Empowerment, Tech Inclusion", :technology_list => "Ruby, Rails, PostgreSQL, JavaScript")
-  Project.create(:organization_id => 3, :name => "CodeMontage Platform", :github_repo => "codemontage", :cause_list => "Volunteerism, Economic Empowerment, Tech Inclusion", :technology_list => "Python, PostgreSQL")
-  Project.create(:organization_id => 3, :name => "CodeMontage Platform", :github_repo => "codemontage", :cause_list => "Volunteerism, Economic Empowerment, Tech Inclusion", :technology_list => "Python, PostgreSQL")
-  Project.create(:organization_id => 3, :name => "CodeMontage Platform", :github_repo => "codemontage", :cause_list => "Volunteerism, Economic Empowerment, Tech Inclusion", :technology_list => "Python, PostgreSQL")
+  Project.create(:organization_id => 3, :name => "Sunlight Foundation Platform", :github_repo => "codemontage", :cause_list => "Volunteerism, Economic Empowerment, Tech Inclusion", :technology_list => "Python, PostgreSQL")
+  Project.create(:organization_id => 3, :name => "Sunlight Foundation Platform", :github_repo => "codemontage", :cause_list => "Volunteerism, Economic Empowerment, Tech Inclusion", :technology_list => "Python, PostgreSQL")
+  Project.create(:organization_id => 3, :name => "Sunlight Foundation Platform", :github_repo => "codemontage", :cause_list => "Volunteerism, Economic Empowerment, Tech Inclusion", :technology_list => "Python, PostgreSQL")
 
   Job.create(:organization_id => 1, :title => "Superhero", :overview => "Save the world with CodeMontage.", :cause_list => "Volunteerism, Economic Empowerment, Tech Inclusion", :technology_list => "JavaScript, Python, Git")
   Job.create(:organization_id => 2, :title => "Team Lead", :overview => "Save the world with DBC.", :cause_list => "Volunteerism, Economic Empowerment, Tech Inclusion", :technology_list => "Ruby, Rails, PostgreSQL, JavaScript")
