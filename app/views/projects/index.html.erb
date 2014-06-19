@@ -7,12 +7,18 @@
         <p>These open source, community-driven projects are making the world better and could really use your help. Check them out and contribute however you'd like. Or, view <%= link_to "organizations", organizations_path %>.
           Excited to contribute, but can't dig in right now? <%= link_to "Code Later", code_later_url %>!</p>
 
-      <form id="language_filter">
-        <input type="radio" name="language" value="All" checked>All
-        <input type="radio" name="language" value="Ruby">Ruby
-        <input type="radio" name="language" value="JavaScript">JavaScript
-        <input type="radio" name="language" value="PostgreSQL">PostgreSQL
-        <input type="radio" name="language" value="Python">Python
+      <form id="technology_filter">
+        <input type="radio" name="technology" value="All" checked>All
+        <% project_technologies(@featured_projects).each do |technology| %>
+          <input type="radio" name="technology" value="<%= technology %>"><%= technology %>
+        <% end %>
+      </form>
+
+      <form id="causes_filter">
+        <input type="radio" name="cause" value="All" checked>All
+        <% project_causes(@featured_projects).each do |cause| %>
+          <input type="radio" name="cause" value="<%= cause %>"><%= cause %>
+        <% end %>
       </form>
 
         <% @featured_projects.each do |project| %>
@@ -69,5 +75,5 @@
 </div>
 
 <script type="text/javascript">
-  var projects_json = <%= @featured_projects.to_json(:include => :technologies).html_safe %>;
+  var projects_json = <%= @featured_projects.to_json(:include => [:technologies, :causes]).html_safe %>;
 </script>
