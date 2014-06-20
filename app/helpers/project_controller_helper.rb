@@ -12,27 +12,16 @@ module ProjectControllerHelper
     end.join(", ").html_safe
   end
 
-  def project_causes projects
-    causes = []
+  def project_filter projects, filter
+    attributes = []
 
     projects.each do |project|
-      project.causes.each do |cause|
-        causes << cause.name
+      project.send(filter).each do |attribute|
+        attributes << attribute.name
       end
     end
 
-    causes.uniq!
+    attributes.uniq!
   end
 
-  def project_technologies projects
-    technologies = []
-
-    projects.each do |project|
-      project.technologies.each do |technology|
-        technologies << technology.name
-      end
-    end
-
-    technologies.uniq!
-  end
 end

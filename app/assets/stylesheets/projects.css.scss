@@ -19,3 +19,14 @@ h5 span.favorite {
 .hidden {
   display: none;
 }
+
+#technology_filter { background-color: $cmPurple; }
+
+#causes_filter { background-color: $cmTeal; }
+
+#causes_filter, #technology_filter {
+  border-radius: 5px;
+  color: #eee;
+  font-size: 0.9em;
+  padding: 10px;
+}

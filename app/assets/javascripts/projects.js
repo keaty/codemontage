@@ -7,19 +7,8 @@ $(document).ready(function () {
     var selectedProjectIds = [];
 
     for( var i = 0; i < projects_json.length; i++) {
-      var hasTech = false;
-      var hasCause = false;
-
-      if (selectedTech === "All") { hasTech = true };
-      if (selectedCause === "All") { hasCause = true };
-
-      for( var j = 0; j < projects_json[i].technologies.length; j++) {
-        if( projects_json[i].technologies[j].name === selectedTech ) { hasTech = true };
-      };
-
-      for( var k = 0; k < projects_json[i].causes.length; k++) {
-        if( projects_json[i].causes[k].name === selectedCause ) { hasCause = true };
-      };
+      var hasTech = matchFilter(i, selectedTech, 'technologies');
+      var hasCause = matchFilter(i, selectedCause, 'causes');
 
       if (hasTech === true && hasCause === true) { selectedProjectIds.push(projects_json[i].id) };
     };
@@ -30,9 +19,14 @@ $(document).ready(function () {
       } else {
         $( this ).addClass('hidden');
       };
-
     });
-
   });
 
+  function matchFilter (i, selected, filter) {
+    var match = false;
+    for( var j = 0; j < projects_json[i][filter].length; j++) {
+      if( projects_json[i][filter][j].name === selected || selected === 'All' ) { match = true };
+    };
+    return match;
+  };
 });

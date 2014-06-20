@@ -9,14 +9,14 @@
 
       <form id="technology_filter">
         <input type="radio" name="technology" value="All" checked>All
-        <% project_technologies(@featured_projects).each do |technology| %>
+        <% project_filter(@featured_projects, 'technologies').each do |technology| %>
           <input type="radio" name="technology" value="<%= technology %>"><%= technology %>
         <% end %>
       </form>
 
       <form id="causes_filter">
         <input type="radio" name="cause" value="All" checked>All
-        <% project_causes(@featured_projects).each do |cause| %>
+        <% project_filter(@featured_projects, 'causes').each do |cause| %>
           <input type="radio" name="cause" value="<%= cause %>"><%= cause %>
         <% end %>
       </form>
